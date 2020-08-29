@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+
+.message{
+  padding:10px;
+  margin:5px;
+  background-color: aquamarine;
+  border-radius: 5px;
+}
