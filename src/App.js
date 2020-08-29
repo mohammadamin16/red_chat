@@ -2,7 +2,8 @@ import React, {Component, useRef, useState} from 'react';
 import './App.css';
 import Message from "./Message";
 
-const url = 'ws://localhost:8000/ws/chat'
+// const url = 'ws://localhost:8000/ws/chat'
+const url = 'wss://super-nice-chat-app-backend.herokuapp.com/ws/chat'
 
 
 class App extends Component {

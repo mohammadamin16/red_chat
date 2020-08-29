@@ -5,7 +5,7 @@
   "engines": {
     "node": "14"
   },
-  "homepage": "https://super-nice-chat-app.herokuapp.co/",
+  "homepage": "https://super-nice-chat-app.herokuapp.com/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
