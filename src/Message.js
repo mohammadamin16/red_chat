@@ -5,7 +5,7 @@ export default function Message(props){
   return (
     <p
       className='message'
-    >{props.body}</p>
+    >{props.message.body}</p>
   );
 }
 

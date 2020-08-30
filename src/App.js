@@ -2,8 +2,8 @@ import React, {Component, useRef, useState} from 'react';
 import './App.css';
 import Message from "./Message";
 
-// const url = 'ws://localhost:8000/ws/chat'
-const url = 'wss://super-nice-chat-app-backend.herokuapp.com/ws/chat'
+const url = 'ws://localhost:8000/ws/chat'
+// const url = 'wss://super-nice-chat-app-backend.herokuapp.com/ws/chat'
 
 
 class App extends Component {
@@ -13,7 +13,7 @@ class App extends Component {
         this.ws = new WebSocket(url)
         this.state = {
             message: '',
-            messages: ['Hi', 'Hello']
+            messages: []
         }
     }
 
@@ -23,13 +23,17 @@ class App extends Component {
             // on connecting, do nothing but log it to the console
             console.log('connected')
         }
-
         this.ws.onmessage = (e) => {
             const data = JSON.parse(e.data)
             console.log(data)
-            let new_messages = this.state.messages
-            new_messages.push(data['message'])
-            this.setState(new_messages)
+            if(data['type'] === 'old_messages'){
+                let messages = data['messages']
+                this.setState({messages: messages})
+            }else if (data['type'] === 'new_message') {
+                let new_messages = this.state.messages
+                new_messages.push(data['message'])
+                this.setState({messages: new_messages})
+            }
         }
 
         this.ws.onclose = () => {
@@ -40,7 +44,7 @@ class App extends Component {
     }
 
     send = () => {
-        this.ws.send(JSON.stringify({'message': this.state.message}))
+        this.ws.send(JSON.stringify({'message': {body: this.state.message}}))
     }
 
     render() {
@@ -49,7 +53,7 @@ class App extends Component {
             <div className="App">
                 {this.state.messages.map((message) => (
                     <Message
-                        body={message}
+                        message={message}
                     />
                 ))}
 
