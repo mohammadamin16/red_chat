@@ -5,9 +5,8 @@ import ReconnectingWebSocket from 'reconnecting-websocket';
 
 import Message from "./Message";
 
-const url = 'ws://localhost:8000/ws/chat'
-
-// const url = 'wss://super-nice-chat-app-backend.herokuapp.com/ws/chat'
+// const url = 'ws://localhost:8000/ws/chat'
+const url = 'wss://super-nice-chat-app-backend.herokuapp.com/ws/chat'
 
 
 class App extends Component {
@@ -46,7 +45,7 @@ class App extends Component {
 
         this.ws.onclose = () => {
             console.log('disconnected')
-            this.setState({status: 'Disconnected :('})
+            this.setState({status: 'connecting...'})
 
         }
     }
@@ -92,7 +91,7 @@ class App extends Component {
                     ))}
                 </div>
                 <form onSubmit={this.send} className='input_row'>
-                    <p>{this.state.status}</p>
+                    <p className='status'>{this.state.status}</p>
 
                     <input
                         className='name_input'

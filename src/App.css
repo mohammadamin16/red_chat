@@ -88,6 +88,10 @@ input::placeholder{
   align-items: center;
 }
 
+.status{
+  margin-left: 10px;
+}
+
 .full_name {
   display: none;
   background-color: transparent;
