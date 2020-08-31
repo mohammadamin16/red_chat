@@ -44,6 +44,7 @@ input{
 input::placeholder{
   text-align: center;
   color:white;
+  font-size: 0.8rem;
 }
 
 .name_input{

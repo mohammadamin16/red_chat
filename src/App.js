@@ -110,7 +110,7 @@ class App extends Component {
                         onChange={(e) => {
                             this.setState({message: e.target.value})
                         }}
-                        placeholder={'Hit Enter to send'}
+                        placeholder={'type & Hit Enter'}
                         onKeyPress={(e) => {
                             if (e.key === 'Enter') {
                                 this.send()
