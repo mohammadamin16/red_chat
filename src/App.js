@@ -81,6 +81,7 @@ class App extends Component {
     render() {
         return (
             <div className="App">
+                    <p className='status'>{this.state.status}</p>
 
                 <div className='message_container'>
                     {this.state.messages.map((message) => (
@@ -91,7 +92,6 @@ class App extends Component {
                     ))}
                 </div>
                 <form onSubmit={this.send} className='input_row'>
-                    <p className='status'>{this.state.status}</p>
 
                     <input
                         className='name_input'
@@ -119,10 +119,10 @@ class App extends Component {
                     />
 
 
-                    <div
-                        className='send_btn'
-                        onClick={this.send}>Send
-                    </div>
+                    {/*<div*/}
+                    {/*    className='send_btn'*/}
+                    {/*    onClick={this.send}>Send*/}
+                    {/*</div>*/}
 
                 </form>
 

@@ -34,7 +34,7 @@ input{
   outline: none;
   border: none;
   margin: 0 10px;
-  /*width: 100%;*/
+  width: 100%;
   border-radius: 30px;
   padding: 5px 20px;
   color: #382020;
@@ -89,7 +89,10 @@ input::placeholder{
 }
 
 .status{
-  margin-left: 10px;
+  margin-top: 0;
+  /*margin-left: 10px;*/
+  background-color: #76121e;
+  font-size: 0.8rem;
 }
 
 .full_name {
